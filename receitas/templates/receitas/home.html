@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -56,36 +57,42 @@ a página terá um fundo cinza claro e texto cinza escuro.-->
         <div class="flex flex-wrap justify-center gap-6">
             <!-- Receita 1 -->
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Receita de Bolo de Chocolate</h3>
+                <img src="{% static 'receitas/img/bolo_chocolate.jpg' %}" alt="[Imagem de Bolo de chocolate]" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Bolo de Chocolate</h3>
                 <p class="text-gray-600 mb-4">Um bolo clásico, úmido e delicioso, perfeito para qualquer ocasião.</p>
                 <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver receita &rarr;</a>
             </div>
             <!-- Receita 2 -->
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                <img src="{% static 'receitas/img/salada.jfif' %}" alt="[Imagem Salada Mediterrânea Fresca]" class="w-full h-48 object-cover rounded-md mb-4">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Salada Mediterrânea Fresca</h3>
                 <p class="text-gray-600 mb-4">Uma salada leve e refrescante, cheia de sabores do Mediterrânea.</p>
                 <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver receita &rarr;</a>
             </div>
             <!-- Receita 3 -->
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                <img src="{% static 'receitas/img/frango.webp' %}" alt="[Imagem Frango assado com ervas]" class="w-full h-48 object-cover rounded-md mb-4">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Frango Assado com Ervas</h3>
                 <p class="text-gray-600 mb-4">Uma receita simples e saborosa de frango assado com um toque de ervas frescas.</p>
                 <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver receita &rarr;</a>
             </div>
             <!-- Receita 4 -->
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                <img src="{% static 'receitas/img/torta_limao.jpg' %}" alt="[Imagem torta de limão]" class="w-full h-48 object-cover rounded-md mb-4">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Torta de Limão Cremosa</h3>
                 <p class="text-gray-600 mb-4">Uma torta clássica com recheio de limão azedinho e merengue tostado.</p>
                 <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver receita &rarr;</a>
             </div>
             <!-- Receita 5 -->
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                <img src="{% static 'receitas/img/sopa.jfif' %}" alt="[Imagem Sopa de legumes]" class="w-full h-48 object-cover rounded-md mb-4">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Sopa de Legumes Nutritiva</h3>
                 <p class="text-gray-600 mb-4">Uma sopa reconfortante e cheia de vegetais frescos, perfeita para dias frios.</p>
                 <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver receita &rarr;</a>
             </div>
             <!-- Receita 6 -->
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                <img src="{% static 'receitas/img/risoto.jfif' %}" alt="[Imagem Risoto de cogumelos]" class="w-full h-48 object-cover rounded-md mb-4">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Risoto de Cogumelos Selvagens</h3>
                 <p class="text-gray-600 mb-4">Um risoto cremoso e aromático, com uma mistura rica de cogumelos selvagens.</p>
                 <a href="#" class="text-orange-600 hover:text-orange-800 font-semibold">Ver receita &rarr;</a>
@@ -93,11 +100,11 @@ a página terá um fundo cinza claro e texto cinza escuro.-->
         </div>
     </main>
     <!-- Conteúdo principal da página -->
-    <main class="container mx-auto p-6 mt-8 bg-white rounded-lg shadow-md">
+    <!-- <main class="container mx-auto p-6 mt-8 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-semibold mb-4">
             Bem-vindo à sua página de receitas!
         </h2>
-        <!-- Container Flexível para as Receitas -->
+        
         <div class="flex flex-wrap justify-center gap-6">
 
         </div>
@@ -107,7 +114,7 @@ a página terá um fundo cinza claro e texto cinza escuro.-->
         <p class="mt-4 text-gray-600">
             Este é o início da sua jornada culinária com Django.
         </p>
-    </main>
+    </main> -->
     <!-- Rodapé da página -->
     <footer class="mt-12 p-6 text-center text-gray-600">
         <p>&copy; 2025 Minhas Receitas. Todos os direitos reservados a Silvano.</p>
