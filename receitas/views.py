@@ -8,11 +8,7 @@ def home(request):
 
 def receita_detail(request, id):
     receita = get_object_or_404(Receita, pk=id)
-    
-    context = {
-        'receita': receita,
-    }
-    return render(request, 'receitas/receita_detail.html', context)
+    return render(request, 'receitas/receita_detail.html', {'receita': receita})
 
 def pesquisar_receitas(request):
     query = request.GET.get('q')
