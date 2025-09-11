@@ -4,6 +4,24 @@
 {% block title %}Comidas - Minhas Receitas{% endblock %}
 
 {% block content %}
+<section class="container mx-auto mt-8 p-4 flex justify-center">
+    <form method="get" action="{% url 'pesquisar_receitas' %}"
+        class="w-full max-w-lg flex bg-white rounded-full shadow-md overflow-hidden">
+        <input type="text" name="q" placeholder="Pesquisar receitas..."
+            class="flex-grow p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-l-full pl-5">
+        <button type="submit"
+            class="bg-orange-500 hover:bg-orange-600 text-white p-3 px-6 rounded-r-full transition duration-300 ease-in-out flex items-center justify-center">
+            <i class="fas fa-search mr-2"></i> Pesquisar
+        </button>
+    </form>
+</section>
+<nav class="relative justify-center my-4 z-10 flex space-x-4">
+    <a href="{% url 'home' %}" class="text-black hover:text-orange-600 mx-2 px-4 py-2 rounded-full bg-gray-300 font-semibold">Todas</a>
+    <a href="{% url 'home' %}?categoria=comida" class="text-black hover:text-orange-600 mx-2 px-4 py-2 rounded-full bg-gray-300 font-semibold">Comida</a>
+    <a href="{% url 'home' %}?categoria=sobremesa"
+        class="text-white  mx-2 px-4 py-2 rounded-full bg-orange-500 font-semibold">Sobremesa</a>
+    <a href="{% url 'home' %}?categoria=drink" class="text-black hover:text-orange-600 mx-2 px-4 py-2 rounded-full bg-gray-300 font-semibold">Drink</a>
+</nav>
     <h2 class="text-2xl font-bold mb-6">Receitas de Comidas</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-gray-100 p-4 rounded-lg shadow hover:shadow-lg transition">
