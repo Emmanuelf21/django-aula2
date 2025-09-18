@@ -11,7 +11,7 @@ def sobre_nos(request):
 def contato(request):
     if request.method == 'POST':
         form = ContatoForm(request.POST)
-        print(form)
+        
         if form.is_valid():
             nome = form.cleaned_data['nome']
             email = form.cleaned_data['email']
