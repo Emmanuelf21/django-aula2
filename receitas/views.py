@@ -11,6 +11,7 @@ def sobre_nos(request):
 def contato(request):
     if request.method == 'POST':
         form = ContatoForm(request.POST)
+        print(form)
         if form.is_valid():
             nome = form.cleaned_data['nome']
             email = form.cleaned_data['email']
@@ -27,7 +28,7 @@ def contato(request):
             return redirect(reverse('sucesso'))
     else:
         form = ContatoForm()
-    return render(request, 'receitas/contato.html', {'form':form})
+    return render(request, 'receitas/contato.html', {'form': form})
 
 def sucesso(request):
     return render(request, 'receitas/sucesso.html')
@@ -35,6 +36,7 @@ def sucesso(request):
 def home(request): 
     categoria_slug = request.GET.get('categoria')
     categorias_choices = [choice[0] for choice in Receita.CATEGORIAS]
+    
     if categoria_slug:
         receitas = Receita.objects.filter(categoria=categoria_slug)
         categoria_selecionada = categoria_slug
@@ -42,14 +44,17 @@ def home(request):
         receitas = Receita.objects.all()
         categoria_selecionada = None
         
-    return render(request, 'receitas/home.html', {'receitas':receitas, 'categoria': categorias_choices, 'categoria_selecionada': categoria_selecionada}) 
+    return render(request, 'receitas/home.html', 
+                  {'receitas':receitas, 
+                   'categoria': categorias_choices, 
+                   'categoria_selecionada': categoria_selecionada}) 
 
 def receita_detail(request, id):
     receita = get_object_or_404(Receita, pk=id)
     return render(request, 'receitas/receita_detail.html', {'receita': receita})
 
 def pesquisar_receitas(request):
-    query = request.GET.get('q')
+    query = request.GET.get('q', '')
     resultados = []
     if query:
         resultados = Receita.objects.filter(title__icontains=query)
